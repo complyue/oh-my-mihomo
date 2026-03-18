@@ -1,0 +1,11 @@
+/bin/
+
+/cache.db
+/GeoIP.dat
+
+/sub-url.txt
+/providers/
+
+/ui/
+
+/config.yaml

@@ -1,0 +1,32 @@
+# 手写基础配置。
+# update-sub.py 会把这里的内容，与订阅里的 proxies / proxy-groups / rules / providers 合成为最终 config.yaml。
+#
+# 这份极简版的原则：
+# 1. 只保留你本机相关、订阅通常不会提供的基础项。
+# 2. 不自定义 DNS。
+# 3. 不额外写 rules；默认完全沿用订阅 rules。
+# 4. 只有当你明确要覆盖订阅行为时，再在这里补少量 rules。
+# 5. 不要自己添加 MATCH，保留订阅末尾的“🐟 漏网之鱼”做兜底。
+
+mixed-port: 7892
+socks-port: 7891
+allow-lan: false
+bind-address: 127.0.0.1
+mode: rule
+log-level: info
+
+external-controller: 127.0.0.1:7893
+external-ui: ui
+external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+
+profile:
+  store-selected: true
+
+geodata-mode: true
+geo-auto-update: true
+geo-update-interval: 24
+geox-url:
+  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
+  geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb"
+  asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
